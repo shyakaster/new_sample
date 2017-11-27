@@ -1,0 +1,11 @@
+{
+    
+        "ruby-lsc.commandWithArgs": [
+            "/usr/local/bin/docker",
+            "run",
+            "--rm",
+            "-i",
+            "mtsmfm/language_server-ruby"
+        ]
+    
+}
