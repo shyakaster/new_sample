@@ -1,29 +1,21 @@
 <footer class="footer">
     <small>
-         The
-        <%= link_to "Ruby on Rails Tutorial",
-         'https://www.railstutorial.org'%> by <%= link_to "alex shyaka", 
-         'http://www.alexshyaka.com'%>
+        The
+        <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+        by
+        <a href="http://www.michaelhartl.com/">Michael Hartl</a>
     </small>
-    
     <nav>
         <ul>
             <li>
-                <%= link_to "Home",root_path%>
+                <%= link_to "About",   about_path %>
             </li>
             <li>
-                <%= link_to "Help",help_path%>
+                <%= link_to "Contact", contact_path %>
             </li>
             <li>
-                <%= link_to "About",about_path%>
-            </li>
-            <li>
-                <%= link_to "Contact us",contact_path%>
-            </li>
-            <li>
-                <%= link_to "Sign in",'#'%>
+                <a href="http://news.railstutorial.org/">News</a>
             </li>
         </ul>
     </nav>
-    
 </footer>
