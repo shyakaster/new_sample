@@ -3,3 +3,16 @@ michael:
   name: Michael Example
   email: michael@example.com
   password_digest: <%= User.digest('password') %>
+  admin: true
+
+alex:
+  name: alex shyaka
+  email: alexshyaka@therailsshop.club
+  password_digest: <%= User.digest('password')%>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "User #{n}" %>
+  email: <%= "example-#{n}@railstutorial.org" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>

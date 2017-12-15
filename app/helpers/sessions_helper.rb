@@ -9,6 +9,9 @@ module SessionsHelper
         cookies.permanent.signed[:user_id] = user.id
         cookies.permanent[:remember_token] = user.remember_token
     end
+    def current_user?(user)
+        user == current_user
+    end
 
     # returns current user logged in user if any?
     def current_user
@@ -27,6 +30,16 @@ module SessionsHelper
                 @current_user = user
             end
         end
+    end
+    # Redirects to the store location or the default
+    def redirect_back_or(default)
+        redirect_to(session[:forwading_url] || default)
+        session.delete(:forwading_url)
+    end
+    # store url the user is trying to access without logging in
+
+    def store_location
+        session[:forwading_url] = request.url if request.get?
     end
     # Returns true if the user is logged in, false otherwise.
     def logged_in?
