@@ -25,7 +25,7 @@ module SessionsHelper
             user = User.find_by(id: user_id)
             # if the user is there then use the authenticated method to compare the remember_token
             # in the cookie and the remember_digest encrypted version
-            if user && user.authenticated?(cookies[:remember_token])
+            if user && user.authenticated?(:remember,cookies[:remember_token])
                 log_in user
                 @current_user = user
             end
